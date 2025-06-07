@@ -1,13 +1,14 @@
-# CI  de NÍVEL 1 - Disparo manual a partir de 1 clique
+# CI  de NÍVEL 2 - Disparo automatico At 06:00 on Monday.
 
 # nome do nosso 'pipeline'
-name: 'Execução manual'
+name: 'Execução agendada para At 06:00 on Monday.'
 
 # regras de execução (gatilhos/triggers)
-# gatilho de execução manual = workflow_dispatch
+# gatilho de execução automatico schedule
 
 on:
-  workflow_dispatch: 
+  schedule:
+    - cron: '0 6 * * 1'
 
 # trabalhos/tarefas dentro do pipeline = jobs
 jobs:
